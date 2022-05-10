@@ -1,0 +1,141 @@
+.footer {
+  background-image: url('/images/footer_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  color: $white;
+  z-index: -2;
+  min-height: 60vh;
+
+  .container{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    gap:1rem;
+    grid-template-columns: 1fr;
+    @include breakpoint-up(medium){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large){
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ftr{
+     
+      @include breakpoint-down(medium){
+        margin-bottom: 1rem;
+      }
+
+      @include breakpoint-up(large){
+        padding: 0 2rem;
+      }
+      p{
+        color: $grayishBlue;
+        margin: 0;
+      }
+      h3{
+        font-family: 'Rubik', sans-serif;
+        color: $orange;
+        font-weight: 400;
+      }
+      h4{
+        color: $white;
+        margin-bottom: 0;
+        
+      }
+    }
+    .ftr-col1{
+      img{
+        margin-bottom: 25px;
+      }
+    }
+    .ftr-col2{
+      i{
+        color: $orange;
+      }
+      .info{
+        display: flex;
+        gap: 8px;
+      }
+      .info-desc{
+        h4{
+          margin-top: 3px;
+        }
+        p{
+          margin-bottom: 16px;
+          
+        }
+      }
+    }
+    .ftr-col3{
+      ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li{
+          a{
+          color: $grayishBlue;
+          line-height: 30px;
+          font-size: 14px;
+          }
+        }
+      }
+    }
+    .ftr-col4{
+      .insta-grid{
+        display: grid;
+        gap: 13px;
+        grid-template-columns: repeat(2,1fr);
+        img{
+          width: 100%;
+        }
+      }
+    }
+    
+
+  }
+
+  .footer-overlay{
+        position: absolute;
+        height: 100%;
+        z-index: -1;
+        opacity: 1;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background:$overlay-gray;
+  }
+
+  .ftr-copyright{
+    border-top: 1px solid $grayishBlue;
+    .container{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+
+      @include breakpoint-down(small){
+        flex-direction: column;
+      }
+      p{
+        margin-bottom: 0;
+        color: $grayishBlue;
+      }
+      ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        a{
+          color: $grayishBlue;
+          font-size: 14px;
+        }
+      }
+    }
+
+  }
+
+}

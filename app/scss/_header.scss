@@ -1,0 +1,168 @@
+.header {
+  position: absolute;
+  top:0;
+  width: 100%;
+  z-index: 1;  
+
+
+  .top_nav{
+    border-bottom: 1px solid $grayishBlue;
+      a, p{
+        font-size: $font-sm;
+      }
+      a{
+        color: $orange;
+      }
+      
+      
+
+    @include breakpoint-down(small){
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .top-title{
+        @include breakpoint-down(medium){
+          display: none;
+        }
+        p{
+          margin: 0.8725rem 0;
+        }
+      }
+      .contact-info{
+        @include breakpoint-down(small){
+          flex-direction: column;
+        }
+        margin: 0.8725rem 0;
+        display:flex;
+        gap: 20px;
+        
+        i{
+          margin-right: 8px;
+        }
+        
+    }
+  }
+    
+
+  }
+  // Hamburger Open Styles
+  &.open {
+
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+        background: $orange;
+      }
+      
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      > span:last-child {
+        transform: rotate(-45deg);
+        background: $orange;
+      }
+    }
+  }
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient($gray, transparent);
+  }
+
+  nav {
+    position: relative;
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+  }
+
+  &__logo {
+
+    img {
+      width: 8.8125rem;
+      height: 1.375rem;
+    }
+
+  }
+
+  &__toggle { // Mobile Menu Toggle
+
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $darkBlue;
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+      background: $white;
+
+      &:not(:last-child){
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $white;
+    margin-top: 1.5rem;
+    padding: 1.625rem;
+    border-radius: 5px;
+
+    a {
+      display: block;
+      padding: 0.625rem;
+      color: $darkBlue;
+      text-align: center;
+    }
+  }
+
+  &__links {
+
+    a {
+      position: relative;
+      font-size: $font-sm;
+      color: $white;
+      transition: color 300ms ease-in-out;
+
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 3px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background: linear-gradient(to right, $orange, $white);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+      &:hover {
+        color: $orange;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

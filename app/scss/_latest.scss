@@ -1,0 +1,70 @@
+.latest{
+    background-image: url('/images/lates_bg.png');
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .container{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .latest-row{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        @include breakpoint-down(small){
+            grid-template-columns: repeat(1,1fr);
+        }
+     
+
+        .latest-col1{
+            display: grid;
+            gap: 15px;
+            .latest-img-grid1{
+                img{
+                    width: 100%;
+                    
+                }
+            }
+            .latest-img-grid2{
+                display: grid;
+                gap:15px;
+                grid-template-columns: 1fr 1fr;
+                img{
+                    width: 100%;
+                }
+                
+            }
+            
+        }
+
+        .latest-col2{
+            
+            h4{
+                color: $orange;
+            }
+            p{
+                color: $white;
+            }
+        }
+    }
+
+    .latest-overlay{
+        position: absolute;
+        height: 100vh;
+        z-index: -1;
+        opacity: 1;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background:$overlay-gray;
+        
+      }
+}

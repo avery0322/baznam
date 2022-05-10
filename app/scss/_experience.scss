@@ -1,0 +1,40 @@
+.experience{
+    .container{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .experience-row{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 2fr 1.5fr;
+        @include breakpoint-down(small){
+            grid-template-columns: repeat(1, 1fr);
+            
+        }
+        .exp1{
+            @include breakpoint-down(small){
+                order:2;
+            }
+            h4{
+                color: $orange;
+            }
+            h2{
+                color: $dark;
+            }
+        }
+        .exp2{
+            
+            background-image: url('/images/experiencepic.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 30px;
+            min-height: 300px;
+            @include breakpoint-down(small){
+                order: 1;
+            }
+          
+        }
+
+    }
+}
